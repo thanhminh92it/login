@@ -1,14 +1,13 @@
 <?php
 
-namespace Modules\Home\Http\Controllers;
+namespace Modules\Admin\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Session;
 use DB;
 
-class HomeController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,12 +16,9 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $username = $request->session()->get('username');
-        return view('home::index')
+        $user = DB::table('account')->select('username')->get();
+        return view('admin::index')
+            ->with('listuser',$user)
             ->with('user',$username);
-    }
-
-    public function admin(Request $request)
-    {
-        redirect('/admin');
     }
 }

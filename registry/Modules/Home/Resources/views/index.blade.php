@@ -10,7 +10,7 @@
                     <a class="navbar-brand" href="/home">MY LIFE</a>
                 </div>
                 <ul class="nav navbar-nav navbar-left">
-                    <li><a href="/home/listuser" class="action">List user</a></li>
+                    <li><a href="/admin" class="action">GO TO ADMIN</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span> {{$user}}</a></li>

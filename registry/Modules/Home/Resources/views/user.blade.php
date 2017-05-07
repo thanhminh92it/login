@@ -28,15 +28,18 @@
                     <table class="table table-striped table-hover">
                         <thead>
                         <tr>
+                            <th style="width:40px"></th>
                             <th>Username</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($listuser as $item)
+                        @foreach($listuser as $key => $item)
                             <tr>
+                                <td>{{$key + 1}}</td>
                                 <td>{{$item->username}}</td>
                             </tr>
                         @endforeach
+
                         </tbody>
                     </table>
                 </div>
