@@ -25,7 +25,7 @@
                     List User
                 </div>
                 <div class="panel-body">
-                    <table class="table table-striped">
+                    <table class="table table-striped table-hover">
                         <thead>
                         <tr>
                             <th>Username</th>
