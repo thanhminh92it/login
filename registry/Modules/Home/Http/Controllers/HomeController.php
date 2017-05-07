@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Session;
+use DB;
 
 class HomeController extends Controller
 {
@@ -18,6 +19,15 @@ class HomeController extends Controller
         $username = $request->session()->get('username');
         return view('home::index')
             ->with('user',$username);
+    }
 
+    public function getalluser(Request $request)
+    {
+        $username = $request->session()->get('username');
+
+        $user = DB::table('account')->select('username')->get();
+        return view('home::user')
+            ->with('listuser',$user)
+            ->with('user',$username);
     }
 }

@@ -1,6 +1,6 @@
 @extends('home::layouts.master')
 @section('title')
-    Welcome to my life - Author: Minhpt
+    All user - Author: Minhpt
 @endsection
 @section('content')
     <div class="form-horizontal">
@@ -20,8 +20,26 @@
         </nav>
 
         <div class="col-md-12">
-            <div>
-                <img src="{{asset('images/a-day-in-the-life.jpg')}}" class="img-rounded img-responsive" alt="Coder" style="margin: 0 auto;">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    List User
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Username</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($listuser as $item)
+                            <tr>
+                                <td>{{$item->username}}</td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
